@@ -1,0 +1,38 @@
+{
+  "skill_name": "video-edit-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Cut lesson.mp4 from 00:01:12.5 to 00:02:05 exactly, speed it up to 1.25x, resize it to 1280x720, keep the audio synchronized, and save lesson-short.mp4 without overwriting an existing file.",
+      "expected_output": "A frame-accurate H.264/AAC edit at 1280x720 with synchronized 1.25x audio, or an explicit skipped result when the destination exists.",
+      "files": [],
+      "expectations": [
+        "The bundled edit_video.py script is used in precise mode.",
+        "Start, end, speed, size, and output arguments match the request.",
+        "Existing output is not overwritten without --overwrite."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Add intro.mp4 before main.mov and outro.mp4 after it. The files have different sizes and one clip has no audio. Produce a 1920x1080 30 fps published.mp4 with continuous audio handling.",
+      "expected_output": "A normalized 1920x1080, 30 fps concatenation in intro-main-outro order, with silence synthesized for a missing audio stream.",
+      "files": [],
+      "expectations": [
+        "The bundled concat_videos.py script is used with --intro and --outro.",
+        "Precise mode normalizes the clips to 1920x1080 and 30 fps.",
+        "The clip without audio receives a silent audio stream rather than breaking concatenation."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Join part-1.mp4 and part-2.mp4 without re-encoding or quality loss. Remove the final audio track and write joined-muted.mp4. Explain any timing or compatibility limitation.",
+      "expected_output": "A lossless stream-copy concatenation with no audio, or a clear compatibility failure before editing.",
+      "files": [],
+      "expectations": [
+        "concat_videos.py uses --mode lossless and --remove-audio.",
+        "Video stream compatibility is checked before concatenation.",
+        "The response explains that stream copy requires compatible inputs and keyframe boundaries affect lossless cuts."
+      ]
+    }
+  ]
+}

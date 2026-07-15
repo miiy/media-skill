@@ -24,7 +24,7 @@ directory scans, and batch processing.
 ## Requirements
 
 - Python 3.10 or newer
-- `faster-whisper` and its Python dependencies
+- `faster-whisper`, HTTPX SOCKS proxy support, and their Python dependencies
 
 Install with pip:
 
@@ -48,6 +48,10 @@ workspace; keep media files, subtitles, local models, and other runtime data in
 the user workspace or another location explicitly requested by the user. Models
 downloaded by name use the normal per-user Hugging Face cache and do not create
 model or cache directories inside the Skill directory.
+
+Named-model downloads inherit standard HTTP, HTTPS, and SOCKS proxy environment
+variables. Set `HF_ENDPOINT` for a command when an alternate Hugging Face
+endpoint is explicitly required; the Skill does not hard-code a mirror.
 
 The examples below use `<skill-dir>` for the installed Skill directory and
 `<workspace>` for the user workspace.

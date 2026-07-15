@@ -20,7 +20,7 @@
 ## 依赖
 
 - Python 3.10 或更高版本
-- faster-whisper 及其 Python 依赖
+- faster-whisper、HTTPX SOCKS 代理支持及其 Python 依赖
 
 使用 pip 安装：
 
@@ -40,6 +40,9 @@ Skill 安装目录只用于读取 `SKILL.md`、脚本和依赖清单，运行时
 使用用户工作区作为工作目录；媒体文件、字幕、本地模型和其他运行数据保存在用户
 工作区或用户明确指定的位置。通过模型名自动下载的模型使用 Hugging Face 的用户级
 缓存，不在 Skill 目录中创建模型或缓存目录。
+
+通过模型名下载时会继承标准 HTTP、HTTPS 和 SOCKS 代理环境变量。明确需要 Hugging
+Face 镜像时，应为该命令设置 `HF_ENDPOINT`；Skill 不会硬编码镜像地址。
 
 下文用 `<skill-dir>` 表示 Skill 安装目录，用 `<workspace>` 表示用户工作区。
 

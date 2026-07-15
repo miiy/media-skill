@@ -15,6 +15,8 @@ directory.
 
 ## Skills
 
+- [`video-edit-skill`](video-edit-skill/README.md): trim, transform, concatenate,
+  and add intros or outros to local videos with FFmpeg
 - [`transcribe-skill`](transcribe-skill/README.md): transcribe local audio and
   video into SRT subtitles
 - [`video-grid-skill`](video-grid-skill/README.md): sample frames evenly from

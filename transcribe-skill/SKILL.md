@@ -14,6 +14,7 @@ Use the bundled script for deterministic local media transcription. Resolve bund
 - Read the script and requirements from `<skill-dir>`, but do not create or modify files there.
 - Keep source media, generated subtitles, explicitly downloaded models, logs, and other runtime data in `<workspace>` or another path requested by the user.
 - Let named models use the normal per-user Hugging Face cache. Never create virtual environments, model directories, caches, outputs, or temporary files under `<skill-dir>`.
+- Named-model downloads inherit standard HTTP, HTTPS, and SOCKS proxy environment variables. When the user explicitly requests a Hugging Face mirror, set `HF_ENDPOINT` for that command instead of hard-coding a mirror in the Skill.
 
 ## Prepare The Runtime
 
