@@ -1,0 +1,39 @@
+{
+  "skill_name": "yt-dlp-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Inspect this media URL for downloadable formats. List resolutions, codecs, file sizes, and format IDs, but do not download anything.",
+      "expected_output": "A yt-dlp-native format table produced by the bundled inspection script without downloading media.",
+      "files": [],
+      "expectations": [
+        "The bundled list_formats.py script is used.",
+        "The workflow reports format IDs and available media details.",
+        "No download is started for an inspection-only request."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "This is a podcast URL supported by yt-dlp, and the page only provides audio streams. Inspect the formats as JSON and tell me the best audio format ID. Do not fail just because there is no video resolution.",
+      "expected_output": "Structured format information for audio-only media with a null best video resolution.",
+      "files": [],
+      "expectations": [
+        "The bundled list_formats.py script is used with --json.",
+        "Audio-only formats are returned successfully.",
+        "The absence of a video resolution is not treated as an error."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Download format 137+140 from this URL into the downloads directory in the user workspace. Keep the title and video ID in the filename. Do not read browser cookies.",
+      "expected_output": "The selected video and audio formats are downloaded and merged under the requested workspace directory.",
+      "files": [],
+      "expectations": [
+        "The bundled download.py script is used with format 137+140.",
+        "A workspace-rooted output template is passed.",
+        "No browser profile or implicit cookie source is accessed.",
+        "The final absolute output path is reported after merging and post-processing."
+      ]
+    }
+  ]
+}

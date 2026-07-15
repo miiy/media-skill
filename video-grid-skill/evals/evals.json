@@ -1,0 +1,39 @@
+{
+  "skill_name": "video-grid-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a 3-row by 4-column video preview grid from sample.mp4 in the user workspace. Write it to sample-overview.jpg in the same workspace and do not overwrite an existing file.",
+      "expected_output": "A timestamped 3x4 contact sheet at the requested path, or an explicit skipped status when it already exists.",
+      "files": [],
+      "expectations": [
+        "The bundled create_video_grid.py script is used with 3 rows and 4 columns.",
+        "The requested output path is used.",
+        "Existing output is not overwritten without --overwrite."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Recursively scan training-videos in the user workspace. Put contact sheets for all videos under training-grids in the workspace, preserve the directory structure, and use two concurrent jobs.",
+      "expected_output": "Contact sheets for supported videos under a mirrored output tree, with a per-file summary.",
+      "files": [],
+      "expectations": [
+        "Directory mode uses --recursive, --output, and --jobs 2.",
+        "Source-relative subdirectories are preserved.",
+        "The result reports succeeded, skipped, and failed counts."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Generate a 3x3 timeline mosaic for portrait.mp4 in the user workspace. Use the default white styling and do not add a black background box behind timestamps.",
+      "expected_output": "A 3x3 overview using a white canvas, fixed header, 0.5 scale ratio, evenly sampled frames, and outlined whole-second timestamp labels.",
+      "files": [],
+      "expectations": [
+        "The video-grid-skill workflow handles the local video rather than extracting one frame.",
+        "The requested 3x3 layout is used.",
+        "The default styling uses a white canvas and header with no timestamp background box.",
+        "Frame sampling stays inside the video boundaries without integer-rounding duplicates."
+      ]
+    }
+  ]
+}

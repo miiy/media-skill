@@ -1,0 +1,38 @@
+{
+  "skill_name": "transcribe-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Turn interview.mp4 in the user workspace into Chinese SRT subtitles at interview.srt in the same workspace. Do not overwrite an existing file.",
+      "expected_output": "A timestamped UTF-8 SRT file at the requested path, or an explicit skipped status if it already exists.",
+      "files": [],
+      "expectations": [
+        "The bundled transcribe_media.py script is used with --language zh.",
+        "The requested SRT output path is used.",
+        "Existing output is not overwritten without --overwrite."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Recursively transcribe the audio and video files in course-media in the user workspace. Put subtitles under course-srt in the workspace and preserve the directory structure. The machine has limited memory, so do not load multiple models concurrently.",
+      "expected_output": "SRT files for supported audio and video inputs under a mirrored output tree, processed with one worker.",
+      "files": [],
+      "expectations": [
+        "Directory mode uses --recursive and the requested output directory.",
+        "The workflow keeps --jobs 1 for limited memory.",
+        "Source-relative subdirectories are preserved."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Use the model in models/faster-whisper-small in the user workspace to generate an SRT for meeting.m4a. This machine has no network access, and the recording contains many long silent sections.",
+      "expected_output": "Offline transcription with the local model directory and VAD enabled.",
+      "files": [],
+      "expectations": [
+        "The local model path is passed with --local-files-only.",
+        "--vad-filter is enabled for long silence.",
+        "The workflow does not attempt to download a model."
+      ]
+    }
+  ]
+}
