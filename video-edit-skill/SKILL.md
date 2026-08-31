@@ -1,7 +1,7 @@
 ---
 name: video-edit-skill
 description: Edit local videos with deterministic FFmpeg scripts. Use whenever the user asks to trim or cut a video by time, concatenate clips, add an intro or outro, change playback speed, crop, resize, rotate, remove audio, or produce either a frame-accurate re-encoded edit or a fast keyframe-aligned lossless stream copy. Supports local files only; use a download skill first for remote URLs.
-compatibility: Requires Python 3.9 or newer plus ffmpeg and ffprobe on PATH. The bundled scripts use only the Python standard library.
+compatibility: Requires Python 3.10 or newer plus ffmpeg and ffprobe on PATH. The bundled scripts use only the Python standard library.
 ---
 
 # Video Edit

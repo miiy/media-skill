@@ -1,0 +1,38 @@
+{
+  "skill_name": "browser-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Open http://127.0.0.1:3000 in Chromium, wait for the element with data-testid=dashboard to become visible, save a full-page screenshot to dashboard.png in the user workspace, and do not overwrite an existing image.",
+      "expected_output": "A full-page Chromium screenshot after the requested dashboard element becomes visible, or an explicit skipped status when the output already exists.",
+      "files": [],
+      "expectations": [
+        "The bundled browser_snapshot.py script is used with the explicit local URL.",
+        "The workflow waits for [data-testid='dashboard'] and requests a full-page screenshot.",
+        "Existing output is not overwritten without --overwrite."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Inspect https://example.com in a real browser. Report the rendered page title and visible text from main, and return structured JSON without creating a screenshot.",
+      "expected_output": "Structured JSON containing the requested URL, final URL, title, and visible text scoped to main.",
+      "files": [],
+      "expectations": [
+        "The browser snapshot workflow uses --selector main and --json.",
+        "No screenshot output is requested.",
+        "The result distinguishes the requested URL from the final URL after redirects."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Test the login form on the local app URL that I provided. Enter the synthetic account test-user@example.test, submit it, and verify that the page navigates to /dashboard and shows a heading named Dashboard. Do not use arbitrary sleeps or read cookies from my installed browsers.",
+      "expected_output": "A focused Playwright interaction using synthetic data, resilient locators, explicit URL and heading checks, and an isolated browser context.",
+      "files": [],
+      "expectations": [
+        "The workflow uses accessible Playwright locators where possible.",
+        "The workflow waits for and asserts the requested URL and visible heading instead of sleeping blindly.",
+        "The workflow does not inspect browser profiles or cookies."
+      ]
+    }
+  ]
+}

@@ -18,7 +18,7 @@
 
 ## 依赖
 
-- Python 3.9 或更高版本
+- Python 3.10 或更高版本
 - `ffmpeg` 和 `ffprobe`，且已经加入 `PATH`
 - 不需要第三方 Python 包
 

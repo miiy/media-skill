@@ -1,7 +1,7 @@
 ---
 name: video-grid-skill
 description: Create visual contact sheets, storyboard grids, timeline mosaics, or thumbnail overview images from local video files by sampling frames evenly and labeling them with timestamps. Use whenever the user asks to preview, summarize, compare, or inspect a video visually, make a video grid/contact sheet, or batch-generate overview images for a directory of videos. Do not use for extracting one exact frame, editing video, or transcribing speech.
-compatibility: Requires Python 3.9 or newer, Pillow, and ffmpeg/ffprobe on PATH.
+compatibility: Requires Python 3.10 or newer, Pillow, and ffmpeg/ffprobe on PATH.
 ---
 
 # Video Grid

@@ -23,5 +23,7 @@ directory.
   local videos and create contact sheets
 - [`yt-dlp-skill`](yt-dlp-skill/README.md): inspect media formats and download
   audio or video
+- [`browser-skill`](browser-skill/README.md): inspect rendered web pages, extract
+  visible text, capture screenshots, and run focused browser checks
 
 See each Skill's `README.md` for installation details and command examples.

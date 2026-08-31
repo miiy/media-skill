@@ -26,7 +26,7 @@ directory.
 
 ## Requirements
 
-- Python 3.9 or newer
+- Python 3.10 or newer
 - `ffmpeg` and `ffprobe` on `PATH`
 - Pillow
 

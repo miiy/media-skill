@@ -15,5 +15,6 @@ Skill 安装目录只存放说明、脚本、依赖清单和内置资源。运�
 - [`transcribe-skill`](transcribe-skill/README.zh-CN.md)：将本地音视频转写为 SRT 字幕
 - [`video-grid-skill`](video-grid-skill/README.zh-CN.md)：从本地视频均匀抽帧，生成视频网格图（contact sheet）
 - [`yt-dlp-skill`](yt-dlp-skill/README.zh-CN.md)：查看媒体格式并下载音视频
+- [`browser-skill`](browser-skill/README.zh-CN.md)：检查浏览器渲染后的网页、提取可见文本、生成截图并执行范围明确的浏览器检查
 
 各 Skill 的安装方式和命令示例见对应目录的 `README.md` 或 `README.zh-CN.md`。
