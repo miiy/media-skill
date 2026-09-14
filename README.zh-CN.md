@@ -15,6 +15,9 @@ Skill 安装目录只存放说明、脚本、依赖清单和内置资源。运�
 - [`transcribe-skill`](transcribe-skill/README.zh-CN.md)：将本地音视频转写为 SRT 字幕
 - [`file-analysis-skill`](file-analysis-skill/README.zh-CN.md)：统计本地目录大小、文件数量并导出 CSV 报告
 - [`video-grid-skill`](video-grid-skill/README.zh-CN.md)：从本地视频均匀抽帧，生成视频网格图（contact sheet）
+- [`thumbnail-skill`](thumbnail-skill/README.zh-CN.md)：使用统一命令为本地视频和图片生成 JPEG 缩略图
+- [`kmplayer-ahk-skill`](kmplayer-ahk-skill/README.zh-CN.md)：在 Windows 上通过 AutoHotkey v2 操作 KMPlayer 生成视频网格图
+- [`html-ppt-skill`](html-ppt-skill/SKILL.md)：HTML 演示文稿参考，目前仅收录参考链接，规则和流程待定
 - [`yt-dlp-skill`](yt-dlp-skill/README.zh-CN.md)：查看媒体格式并下载音视频
 - [`browser-skill`](browser-skill/README.zh-CN.md)：检查浏览器渲染后的网页、提取可见文本、生成截图并执行范围明确的浏览器检查
 

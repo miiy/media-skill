@@ -23,6 +23,12 @@ directory.
   file counts, and export CSV reports
 - [`video-grid-skill`](video-grid-skill/README.md): sample frames evenly from
   local videos and create contact sheets
+- [`thumbnail-skill`](thumbnail-skill/README.md): generate JPEG thumbnails for
+  local videos and images with one unified command
+- [`kmplayer-ahk-skill`](kmplayer-ahk-skill/README.md): automate KMPlayer
+  video grid captures on Windows with AutoHotkey v2
+- [`html-ppt-skill`](html-ppt-skill/SKILL.md): HTML presentation reference;
+  rules and workflows are not yet defined
 - [`yt-dlp-skill`](yt-dlp-skill/README.md): inspect media formats and download
   audio or video
 - [`browser-skill`](browser-skill/README.md): inspect rendered web pages, extract
