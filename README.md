@@ -19,6 +19,8 @@ directory.
   and add intros or outros to local videos with FFmpeg
 - [`transcribe-skill`](transcribe-skill/README.md): transcribe local audio and
   video into SRT subtitles
+- [`file-analysis-skill`](file-analysis-skill/README.md): summarize local directory sizes,
+  file counts, and export CSV reports
 - [`video-grid-skill`](video-grid-skill/README.md): sample frames evenly from
   local videos and create contact sheets
 - [`yt-dlp-skill`](yt-dlp-skill/README.md): inspect media formats and download

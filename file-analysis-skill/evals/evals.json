@@ -1,0 +1,38 @@
+{
+  "skill_name": "file-analysis-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Analyze the media directory in my workspace and write a CSV report to reports/media-analysis.csv. I need the immediate files and folders sorted by total size, including recursive file counts, without changing any media files.",
+      "expected_output": "A readable size table and a UTF-8 CSV report at the requested path, with one row per immediate entry.",
+      "files": [],
+      "expectations": [
+        "The bundled analyze_top_level.py script is used.",
+        "The requested directory and --csv output path are passed.",
+        "The report is read-only with respect to analyzed media files."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Please inventory the current workspace's top-level folders and files and tell me which ones use the most disk space. Save the default CSV report beside the command's working directory.",
+      "expected_output": "A size-sorted terminal table and analysis_result.csv with names, types, byte sizes, readable sizes, and file counts.",
+      "files": [],
+      "expectations": [
+        "The current workspace is analyzed without scanning unrelated locations.",
+        "Directory rows use recursive regular-file totals and counts.",
+        "The generated CSV includes a populated first name column for filesystem entries."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "The source CSV I received has a blank first field because its filename was removed. I need a fresh local directory analysis CSV whose first column contains the actual top-level file or folder names, not blank values.",
+      "expected_output": "A new analysis CSV generated from the local directory, with the first column populated from filesystem entry names and no source CSV mutation.",
+      "files": [],
+      "expectations": [
+        "The workflow treats the local directory as the analysis input rather than relying on a source CSV filename.",
+        "The output first column is the immediate entry name.",
+        "Existing source files are not renamed, deleted, or overwritten."
+      ]
+    }
+  ]
+}
