@@ -33,5 +33,8 @@ directory.
   audio or video
 - [`browser-skill`](browser-skill/README.md): inspect rendered web pages, extract
   visible text, capture screenshots, and run focused browser checks
+- [`md-to-docx-skill`](md-to-docx-skill/README.md): turn markdown drafts into
+  Chinese Word documents with cover page, TOC field, header/footer, and table and
+  mermaid handling; optional LibreOffice PDF export
 
 See each Skill's `README.md` for installation details and command examples.

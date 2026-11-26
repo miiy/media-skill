@@ -1,0 +1,38 @@
+{
+  "skill_name": "md-to-docx-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have three markdown files in ./docs that need to go out as Word documents. Project is \"XX Group Q&A Platform\", authoring org \"XX Tech\", date 2026-11-20, version V1.2 — the cover and header need those.",
+      "expected_output": "Three .docx files in a separate output directory, each with a cover page, header, footer, and revision table carrying the supplied project metadata, plus a reminder to press F9 to populate TOC page numbers.",
+      "files": [],
+      "expectations": [
+        "Project metadata is passed through doc-meta.json rather than hard-coded into the markdown or into md2docx.js.",
+        "md2docx.js is invoked with the source directory and an output directory outside the skill directory.",
+        "The reply tells the user to open the files in Word and press F9 to refresh the TOC field."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "The doc needs a deployment diagram and a performance table. I wrote the diagram as a mermaid block; the table has 8 columns. Will the table get squeezed into a single line?",
+      "expected_output": "The mermaid block is rendered to PNG and centered with a caption below it, the 8-column table keeps automatic widths on a full-width layout instead of fixed cell widths, and the install prerequisites (registry mirror, system Chrome for mermaid) are stated.",
+      "files": [],
+      "expectations": [
+        "Explains that tables use AUTOFIT with a table-level percentage width, not hard-coded cell widths.",
+        "mermaid diagrams are rendered from the markdown block and embedded as PNG with the caption below the figure.",
+        "Mentions setting the npm registry mirror (npm config set registry https://registry.npmmirror.com) before installing dependencies."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Client wants PDFs — convert them straight away.",
+      "expected_output": "An explanation that no pure-npm docx→PDF renderer exists, with the two viable paths: export from Word after pressing F9, or scripts/docx2pdf.sh when LibreOffice is installed.",
+      "files": [],
+      "expectations": [
+        "Does not claim a pure JavaScript or npm conversion path.",
+        "Offers the Word export path with the F9 reminder, or docx2pdf.sh when LibreOffice is present.",
+        "Names the actual bundled script path under the skill directory."
+      ]
+    }
+  ]
+}

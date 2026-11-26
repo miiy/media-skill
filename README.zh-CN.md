@@ -20,5 +20,6 @@ Skill 安装目录只存放说明、脚本、依赖清单和内置资源。运�
 - [`html-ppt-skill`](html-ppt-skill/SKILL.md)：HTML 演示文稿参考，目前仅收录参考链接，规则和流程待定
 - [`yt-dlp-skill`](yt-dlp-skill/README.zh-CN.md)：查看媒体格式并下载音视频
 - [`browser-skill`](browser-skill/README.zh-CN.md)：检查浏览器渲染后的网页、提取可见文本、生成截图并执行范围明确的浏览器检查
+- [`md-to-docx-skill`](md-to-docx-skill/README.zh-CN.md)：把 markdown 源稿转成带封面、目录域、页眉页脚的中文 Word 文档，可选经 LibreOffice 转 PDF
 
 各 Skill 的安装方式和命令示例见对应目录的 `README.md` 或 `README.zh-CN.md`。
